@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,500&display=swap');
+
+.navbar{
+  background-color: #FFCC00;
+  width: 100%;
+
+  &__container{
+    width: 100%;
+  }
+
+  &__brand{
+    margin: 5px 0px 5px 5px;
+    padding: 0px;
+
+    &__logo {
+      height: 50px;
+      width: 100%;
+    }
+  }
+
+&__search{
+  width: 100%;
+  margin: 5px 0px 5px 0px;
+
+  &__input{
+    width: 100%;
+    max-width: 32rem;
+    font-family: 'Nunito Sans', sans-serif;
+    height: 3rem;
+    border-color: black;
+    border-width: 1.5px;
+  }
+}
+
+&__filters{
+  margin: 5px 0px 5px 0px;
+
+  &__button{
+    height: 50px;
+    width: 130px;
+  }
+}
+}

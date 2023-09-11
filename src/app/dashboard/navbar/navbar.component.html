@@ -1,1 +1,42 @@
-<p>navbar works!</p>
+<!-- <nav class="navbar navbar-expand-lg navbar-theme">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-center align-items-center">
+        <a class="navbar-brand" href="#">
+          <img src="../../../assets/pokemon-logo.png" alt="Logo" class="navbar-logo nav-logo">
+        </a>
+        <form class="d-flex mt-lg-0 mt-2">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav> -->
+
+<nav class="navbar navbar-expand-lg">
+        <div class="navbar__container container-fluid flex-lg-row flex-column justify-content-between justify-content-center align-items-center flex-grow-1">
+
+            <!-- Brand Logo on the left -->
+            <div class="navbar-brand navbar__brand">
+                <a href="#">
+                    <img src="../../../assets/pokemon-logo.png" alt="Logo" class="navbar-logo navbar__brand__logo">
+                </a>
+            </div>
+
+
+            <!-- Centered Search Form and Submit Button -->
+            <div class="navbar__search">
+                <form class="d-flex justify-content-center ">
+                    <input class="form-control navbar__search__input me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark navbar__search__button" type="submit">Search</button>
+                </form>
+            </div>
+
+            <!-- Filters Dropdown on the right -->
+            <div class="navbar__filters">
+                <button class="btn navbar__filters__button btn-dark dropdown-toggle" type="button" id="filtersDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Filters
+                </button>
+            </div>
+        </div>
+</nav>
