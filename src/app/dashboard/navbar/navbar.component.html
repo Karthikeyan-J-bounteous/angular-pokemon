@@ -1,17 +1,3 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-theme">
-    <div class="container-fluid">
-      <div class="d-flex justify-content-center align-items-center">
-        <a class="navbar-brand" href="#">
-          <img src="../../../assets/pokemon-logo.png" alt="Logo" class="navbar-logo nav-logo">
-        </a>
-        <form class="d-flex mt-lg-0 mt-2">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav> -->
-
 <nav class="navbar navbar-expand-lg">
         <div class="navbar__container container-fluid flex-lg-row flex-column justify-content-between justify-content-center align-items-center flex-grow-1">
 
@@ -26,7 +12,10 @@
             <!-- Centered Search Form and Submit Button -->
             <div class="navbar__search">
                 <form class="d-flex justify-content-center ">
-                    <input class="form-control navbar__search__input me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control navbar__search__input me-2" type="search" list="list-pokemon" [(ngModel)]="searchQuery" (input)="onSearchInput($event)" name="search" placeholder="Search" aria-label="Search">
+                        <datalist id="list-pokemon">
+                            <option *ngFor="let pokemon of suggestion">{{pokemon}}</option>
+                        </datalist>
                     <button class="btn btn-outline-dark navbar__search__button" type="submit">Search</button>
                 </form>
             </div>
