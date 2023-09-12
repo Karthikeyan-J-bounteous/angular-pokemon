@@ -12,7 +12,10 @@
             <!-- Centered Search Form and Submit Button -->
             <div class="navbar__search">
                 <form class="d-flex justify-content-center ">
-                    <input class="form-control navbar__search__input me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control navbar__search__input me-2" type="search" list="list-pokemon" [(ngModel)]="searchQuery" (input)="onSearchInput($event)" name="search" placeholder="Search" aria-label="Search">
+                        <datalist id="list-pokemon">
+                            <option *ngFor="let pokemon of suggestion">{{pokemon}}</option>
+                        </datalist>
                     <button class="btn btn-outline-dark navbar__search__button" type="submit">Search</button>
                 </form>
             </div>

@@ -13,6 +13,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { pokemonReducer } from './store/app/pokemon.reducer';
 import { PokemonEffects } from './store/app/pokemon.effects';
 import { PokemonService } from './services/pokeapi.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,9 +27,10 @@ import { PokemonService } from './services/pokeapi.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    FormsModule,
     StoreModule.forRoot({ pokemon: pokemonReducer }),
     EffectsModule.forRoot([PokemonEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [PokemonService, { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }],
   bootstrap: [AppComponent]

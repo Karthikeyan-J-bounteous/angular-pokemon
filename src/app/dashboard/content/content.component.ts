@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { loadPokemon } from 'src/app/store/app/pokemon.actions';
-import { selectPokemon } from 'src/app/store/app/pokemon.selectors';
+import { Observable, combineLatest, map } from 'rxjs';
+import { fetchPokemon, loadPokedex, loadPokemon } from 'src/app/store/app/pokemon.actions';
+import { Pokemon } from 'src/app/store/app/pokemon.model';
+import { selectPokedex, selectPokemon } from 'src/app/store/app/pokemon.selectors';
+import { Pokedex } from 'src/interfaces/pokedex.interface';
 
 @Component({
   selector: 'app-content',
@@ -9,20 +12,26 @@ import { selectPokemon } from 'src/app/store/app/pokemon.selectors';
   styleUrls: ['./content.component.scss']
 })
 export class ContentComponent {
-  pokemonData: any[] = [];
+  pokedexData$: Observable<any[]>;
+  pokemonData$: Observable<any[]>;
 
-  constructor(private store: Store) {}
+  constructor(private store: Store) {
+    this.pokedexData$ = this.store.select(selectPokedex);
+   this.pokemonData$ = this.store.select(selectPokemon);
+  }
 
   ngOnInit(): void {
-    this.store.dispatch(loadPokemon());
-    this.store.select(selectPokemon).subscribe((data) => {
-      if (data) {
-        this.pokemonData = data;
-        console.log(this.pokemonData);
-      }
-      else{
-        console.log("waiting..!")
-      }
+    this.store.dispatch(fetchPokemon({ name: 'ditto' }));
+    this.store.dispatch(fetchPokemon({ name: 'pikachu' }));
+    this.try()
+  }
+
+  try(){
+    this.pokedexData$.subscribe((pokemonList) => {
+      console.log('Updated Pokémon List:', pokemonList);
+    });
+    this.pokemonData$.subscribe((pokemonList) => {
+      console.log('Updated ALL List:', pokemonList);
     });
   }
 }

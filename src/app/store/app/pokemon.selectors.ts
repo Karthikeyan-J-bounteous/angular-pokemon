@@ -12,3 +12,13 @@ export const selectError = createSelector(
   selectPokemonState,
   (state) => state.error
 );
+
+export const selectPokedex = createSelector(
+    selectPokemonState,
+    (state) => state.pokedexData
+  );
+
+  export const selectPokedexError = createSelector(
+    selectPokemonState,
+    (state) => state.pokedex_error
+  );
