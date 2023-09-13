@@ -14,6 +14,7 @@ import { pokemonReducer } from './store/app/pokemon.reducer';
 import { PokemonEffects } from './store/app/pokemon.effects';
 import { PokemonService } from './services/pokeapi.service';
 import { FormsModule } from '@angular/forms';
+import { CardsComponent } from './dashboard/content/cards/cards.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     DashboardComponent,
     NavbarComponent,
-    ContentComponent
+    ContentComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,

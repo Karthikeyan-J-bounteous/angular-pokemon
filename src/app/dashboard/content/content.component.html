@@ -1,1 +1,21 @@
-<p>content works!</p>
+<div class="containers">
+    <div class="card-container row justify-content-around">
+        <div class="cards col-lg-3 col-md-4 col-sm-6">
+            <app-cards></app-cards>
+        </div>
+    </div>
+</div>
+
+
+<div class="card_nav">
+    <div class="d-flex flex-row nav justify-content-around justify-content-lg-end">
+        <div class="button-container">
+            <button class="btn btn-primary nav-button" [disabled]="leftDisable" (click)="selectPrevious()">
+                <i class="bi bi-arrow-left"></i>
+            </button>
+            <button class="btn btn-primary nav-button" [disabled]="rightDisable" (click)="selectNext()">
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>

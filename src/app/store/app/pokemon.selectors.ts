@@ -13,6 +13,12 @@ export const selectError = createSelector(
   (state) => state.error
 );
 
+export const selectPokemonbyName = (name: string) => createSelector(
+  selectPokemonState,
+  (state) =>
+      state.pokedexData.find((pokemon) => pokemon.name === name)
+);
+
 export const selectPokedex = createSelector(
     selectPokemonState,
     (state) => state.pokedexData

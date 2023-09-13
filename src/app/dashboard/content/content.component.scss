@@ -1,0 +1,30 @@
+.card_nav{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #FFCC00;
+    color: white;
+}
+
+.containers{
+    position: absolute;
+    width: 100%;
+}
+
+@media (max-width: 992){
+    .nav-button{
+        background-color: aqua;
+    }
+}
+
+
+.nav-button{
+    margin: 5px 5px 5px 5px;
+    background-color: #0A285F;
+}
+
+.card-container{
+    padding-left: 0;
+    margin: 0;
+}
