@@ -15,6 +15,7 @@ export class ContentComponent {
   pokemonObservable$: Observable<Pokemon[]>;
   pokemonList: Pokemon[];
   pokemonRange: Pokemon[];
+  max_load: number = 0;
   range: [number,number] = [0,20];
 
   rightDisable: boolean = false;
@@ -36,14 +37,14 @@ export class ContentComponent {
     });
     // this.store.dispatch(fetchPokemon({ name: 'pikachu' }));
     // this.store.dispatch(fetchPokemon({ name: 'mesprit' }));
-    this.try()
+   // this.try()
   }
 
   try(){
     // this.pokedexData$.subscribe((pokemonList) => {
     //   console.log('Updated Pokémon List:', pokemonList);
     // });
-      console.log('Pokemon List:', this.pokemonRange);
+      //console.log('Pokemon List:', this.pokemonRange);
     // this.findPokemon$.subscribe((pokemon) => {
     //   console.log('Ditto Data:', pokemon);
     // });
@@ -51,8 +52,13 @@ export class ContentComponent {
 
   getItemsFromIndex() {
     this.pokemonRange = this.pokemonList.slice(this.range[0], this.range[0] + this.range[1]);
-    console.log(this.pokemonRange);
-    console.log(this.range);
+
+    if(this.max_load < this.range[0] + 20){
+      for(let poke of this.pokemonRange){
+        this.store.dispatch(fetchPokemon({ name: poke.name }));
+      }
+      this.max_load = this.max_load < this.range[0]? this.range[0] : this.max_load;
+    }
   }
 
   selectNext() {

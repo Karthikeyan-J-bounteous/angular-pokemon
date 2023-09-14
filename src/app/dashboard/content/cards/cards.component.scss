@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,500&display=swap');
+
+.card{
+    padding: 10px;
+font-family: 'Nunito Sans', sans-serif;
+background-color: #0A285F;
+color: antiquewhite;
+border-color: #FFCC00;
+border-radius: 20px;
+
+    &__img{
+        height: auto;
+        width: 150px;
+    }
+
+    &__type{
+
+        &__button{
+            width: 120px;
+            margin: 5px;
+            border-color: black;
+            border-radius: 50px;
+
+            &__normal {
+                background-color: #B8B8B8;
+                color: black;
+              }
+              
+              &__fighting {
+                background-color: #FF4D4D;
+              }
+              
+              &__flying {
+                background-color: #AEEEEE;
+                color: black;
+              }
+              
+              &__poison {
+                background-color: #8A2BE2;
+              }
+              
+              &__ground {
+                background-color: #D2B48C;
+                color: black;
+              }
+              
+              &__rock {
+                background-color: #B8860B;
+              }
+              
+              &__bug {
+                color: black;
+                background-color: #7FFF00;
+              }
+              
+              &__ghost {
+                background-color: #6A5ACD;
+              }
+              
+              &__steel {
+                background-color: #C0C0C0;
+                color: black;
+              }
+              
+              &__fire {
+                background-color: #FF4500;
+              }
+              
+              &__water {
+                background-color: #1E90FF;
+              }
+              
+              &__grass {
+                background-color: #32CD32;
+                color: black;
+              }
+              
+              &__electric {
+                background-color: #FFD700;
+              }
+              
+              &__psychic {
+                background-color: #FF69B4;
+              }
+              
+              &__ice {
+                background-color: #00FFFF;
+                color: black;
+              }
+              
+              &__dragon {
+                background-color: #FF8C00;
+              }
+              
+              &__dark {
+                background-color: #2E2E2E;
+              }
+              
+              &__fairy {
+                background-color: #FFB6C1;
+                color: black;
+              }
+              
+              &__unknown {
+                background-color: #FFFFFF;
+                color: black;
+              }
+              
+              &__shadow {
+                background-color: #333333;
+              }
+
+
+        }
+    }
+
+    &__exp{
+        margin-bottom: 20px;
+        width: 250px;
+    }
+
+
+}
+
+.progress-bar{
+    background-color: green;
+}
+
+.progress{
+    background-color: #FFCC00;
+}
+
+.card:hover{
+    background-color: #FFCC008e;
+    border-color: antiquewhite;
+}
