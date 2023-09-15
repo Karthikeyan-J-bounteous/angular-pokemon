@@ -49,7 +49,6 @@ export class ContentComponent {
 
   childFunction(value: [String, String]) {
     this.searchFilter = value;
-    console.log(this.searchFilter)
     this.range = [0, 20];
 
     if (this.searchFilter[0] == "" && this.searchFilter[1] == 'clear') {
@@ -75,7 +74,7 @@ export class ContentComponent {
         });
       });
     }
-    
+
     else if (this.searchFilter[0] != "" && this.searchFilter[1] != 'clear'){
       this.pokemonService.fetchPokemonByType(this.searchFilter[1]).subscribe((data) => {
         let sortedByType: any = [];

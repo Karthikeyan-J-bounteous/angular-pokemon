@@ -12,7 +12,6 @@ export class DashboardComponent{
 
 
   updateComponent(value: [String, String]) {
-    console.log(value);
     this.childComponent.childFunction(value);
   }
 }

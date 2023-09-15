@@ -103,6 +103,9 @@ export class NavbarComponent {
       this.emitValues[1] = 'clear';
       this.searchQuery = "";
     }
+    else{
+      this.selectedType = type;
+    }
     this.emitValues[1] = type;
     this.valueChanged.emit(this.emitValues);
   }
