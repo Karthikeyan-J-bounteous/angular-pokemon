@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { loadPokemon } from 'src/app/store/app/pokemon.actions';
 import { Pokemon } from 'src/app/store/app/pokemon.model';
 import { selectPokemon } from 'src/app/store/app/pokemon.selectors';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +14,10 @@ import { Subject } from 'rxjs';
 })
 export class NavbarComponent {
   collapsed: boolean = true;
+  @Output() valueChanged = new EventEmitter<[String, String]>();
+  emitValues: [String, String] = ["", "clear"]
   selectedType: string = "Type";
+
   typeNames = [
     "clear",
     "normal",
@@ -94,8 +98,18 @@ export class NavbarComponent {
   }
 
   typeClick(type: string){
-    
-    this.selectedType = type == "clear"? "Type" : type;
+    if(type == 'clear'){
+      this.selectedType = 'Type';
+      this.emitValues[1] = 'clear';
+      this.searchQuery = "";
+    }
+    this.emitValues[1] = type;
+    this.valueChanged.emit(this.emitValues);
+  }
+
+  searchEnter(){
+    this.emitValues[0] = this.searchQuery.toLowerCase()
+    this.valueChanged.emit(this.emitValues);
   }
 
 }

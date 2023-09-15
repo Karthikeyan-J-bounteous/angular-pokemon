@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Output, ViewChild } from '@angular/core';
+import { ContentComponent } from './content/content.component';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent{
 
+  @ViewChild(ContentComponent) childComponent: ContentComponent;
+
+
+  updateComponent(value: [String, String]) {
+    console.log(value);
+    this.childComponent.childFunction(value);
+  }
 }
