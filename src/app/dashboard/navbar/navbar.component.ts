@@ -13,7 +13,30 @@ import { Subject } from 'rxjs';
 })
 export class NavbarComponent {
   collapsed: boolean = true;
-
+  selectedType: string = "Type";
+  typeNames = [
+    "clear",
+    "normal",
+    "fighting",
+    "flying",
+    "poison",
+    "ground",
+    "rock",
+    "bug",
+    "ghost",
+    "steel",
+    "fire",
+    "water",
+    "grass",
+    "electric",
+    "psychic",
+    "ice",
+    "dragon",
+    "dark",
+    "fairy",
+    "unknown",
+    "shadow"
+  ];
   pokemonData: Pokemon[] = [];
   pokemonName: string[] = [];
   suggestion: string[] = [];
@@ -26,7 +49,7 @@ export class NavbarComponent {
 
     this.searchSubject
     .pipe(
-      debounceTime(1000), // Adjust the debounce time as needed (milliseconds)
+      debounceTime(500), // Adjust the debounce time as needed (milliseconds)
       distinctUntilChanged()
     )
     .subscribe(query => {
@@ -64,6 +87,15 @@ export class NavbarComponent {
     return this.pokemonName.filter(suggestion =>
       suggestion.toLowerCase().includes(query.toLowerCase())
     );
+  }
+
+  loadClass(type: string){
+    return "navbar__filters__button__"+type;
+  }
+
+  typeClick(type: string){
+    
+    this.selectedType = type == "clear"? "Type" : type;
   }
 
 }

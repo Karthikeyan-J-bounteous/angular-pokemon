@@ -37,11 +37,119 @@
 }
 
 &__filters{
-  margin: 5px 0px 5px 0px;
+  margin: 5px 40px 5px 0px;
+  z-index: 20;
 
   &__button{
     height: 50px;
     width: 130px;
+
+    &__normal {
+      background-color: #B8B8B8;
+      text-align: center;
+    }
+
+    &__clear {
+      background-color: white;
+      text-align: center;
+    }
+    
+    &__fighting {
+      background-color: #FF4D4D;
+      text-align: center;
+    }
+    
+    &__flying {
+      background-color: #AEEEEE;
+      text-align: center;
+    }
+    
+    &__poison {
+      background-color: #8A2BE2;
+      text-align: center;
+    }
+    
+    &__ground {
+      background-color: #D2B48C;
+      text-align: center;
+    }
+    
+    &__rock {
+      background-color: #B8860B;
+      text-align: center;
+    }
+    
+    &__bug {
+      background-color: #7FFF00;
+      text-align: center;
+    }
+    
+    &__ghost {
+      background-color: #6A5ACD;
+      text-align: center;
+    }
+    
+    &__steel {
+      background-color: #C0C0C0;
+      text-align: center;
+    }
+    
+    &__fire {
+      background-color: #FF4500;
+      text-align: center;
+    }
+    
+    &__water {
+      background-color: #1E90FF;
+      text-align: center;
+    }
+    
+    &__grass {
+      background-color: #32CD32;
+      text-align: center;
+    }
+    
+    &__electric {
+      background-color: #FFD700;
+      text-align: center;
+    }
+    
+    &__psychic {
+      background-color: #FF69B4;
+      text-align: center;
+    }
+    
+    &__ice {
+      background-color: #00FFFF;
+      text-align: center;
+    }
+    
+    &__dragon {
+      background-color: #FF8C00;
+      text-align: center;
+    }
+    
+    &__dark {
+      background-color: #2E2E2E;
+      text-align: center;
+      color: white;
+    }
+    
+    &__fairy {
+      background-color: #FFB6C1;
+      text-align: center;
+    }
+    
+    &__unknown {
+      background-color: #FFFFFF;
+      text-align: center;
+    }
+    
+    &__shadow {
+      background-color: #333333;
+      text-align: center;
+      color: white;
+    }
   }
 }
 }

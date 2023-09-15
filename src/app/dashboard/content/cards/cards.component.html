@@ -16,6 +16,5 @@
       <div class="d-flex card__type justify-content-around" *ngIf="this.pokemon">
         <button *ngFor="let types of this.pokemon.types; let i = index" [ngClass]="loadClass(types.type.name)" class="card__type__button btn btn-primary">{{types.type.name}}</button>
       </div>
-      <a href="#" class="stretched-link"></a>
     </div>
   </div>

@@ -38,5 +38,4 @@ loadClass(type: string){
   return ("card__type__button__" + type)
 }
 
-
 }
