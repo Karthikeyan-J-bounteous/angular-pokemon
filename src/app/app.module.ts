@@ -15,6 +15,8 @@ import { PokemonEffects } from './store/app/pokemon.effects';
 import { PokemonService } from './services/pokeapi.service';
 import { FormsModule } from '@angular/forms';
 import { CardsComponent } from './dashboard/content/cards/cards.component';
+import { DetailsPageComponent } from './details-page/details-page.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { CardsComponent } from './dashboard/content/cards/cards.component';
     DashboardComponent,
     NavbarComponent,
     ContentComponent,
-    CardsComponent
+    CardsComponent,
+    DetailsPageComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,
