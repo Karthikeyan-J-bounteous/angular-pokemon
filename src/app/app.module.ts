@@ -36,7 +36,7 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
     FormsModule,
     StoreModule.forRoot({ pokemon: pokemonReducer }),
     EffectsModule.forRoot([PokemonEffects]),
-   // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    //StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [PokemonService, { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }],
   bootstrap: [AppComponent]

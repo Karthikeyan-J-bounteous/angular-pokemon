@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { fetchPokemon } from 'src/app/store/app/pokemon.actions';
 import { selectPokemonbyName } from 'src/app/store/app/pokemon.selectors';
 import { Pokedex } from 'src/interfaces/pokedex.interface';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-cards',
@@ -14,11 +16,10 @@ export class CardsComponent {
 
   @Input() name: string;
   exp !: string;
-  isLoaded: Boolean = false;
   findPokemon$: Observable<Pokedex>;
   pokemon: Pokedex = null;
 
-  constructor(private store: Store) {
+  constructor(private store: Store, private router: Router) {
    }
 
    ngOnInit(): void {
@@ -36,6 +37,11 @@ loadExp(){
 }
 loadClass(type: string){
   return ("card__type__button__" + type)
+}
+
+onClickCard(name : string){
+  this.router.navigate(['/content'], { queryParams: { name: name }, queryParamsHandling: 'merge' });
+
 }
 
 }

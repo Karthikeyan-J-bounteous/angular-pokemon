@@ -50,9 +50,10 @@ export class ContentComponent {
   childFunction(value: [String, String]) {
     this.searchFilter = value;
     this.range = [0, 20];
+    this.max_load = 0;
+    this.pokemonList = this.allPokemonList;
 
     if (this.searchFilter[0] == "" && this.searchFilter[1] == 'clear') {
-      this.pokemonList = this.allPokemonList;
       this.checkNav();
       this.getItemsFromIndex();
     }
@@ -82,7 +83,7 @@ export class ContentComponent {
           sortedByType.push(poke.pokemon.name);
           this.pokemonList = this.allPokemonList.filter(pokemon => sortedByType.includes(pokemon.name));
           this.pokemonList = this.pokemonList.filter(pokemon => pokemon.name.includes(<string>this.searchFilter[0]));
-          this.checkNav()
+          this.checkNav();
           this.getItemsFromIndex();
         });
       });
@@ -98,6 +99,7 @@ export class ContentComponent {
       this.rightDisable = true;
       this.leftDisable = true;
     }
+    console.log(this.pokemonList)
   }
 
   selectNext() {
@@ -106,7 +108,7 @@ export class ContentComponent {
       this.getItemsFromIndex();
       this.leftDisable = false;
     }
-    else {
+    if(this.range[0] + this.range[1] > this.pokemonList.length) {
       this.rightDisable = true;
     }
   }
