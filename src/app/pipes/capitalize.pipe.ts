@@ -10,7 +10,10 @@ export class CapitalizePipe implements PipeTransform {
   transform(value: string): string {
     if (!value) return value;
 
-    return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+    const words = value.split('-').map(word => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+    return words.join(' ');
   }
 
 }

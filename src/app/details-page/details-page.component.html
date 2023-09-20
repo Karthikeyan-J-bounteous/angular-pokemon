@@ -10,17 +10,30 @@
                         <h2 class="text-center">#{{this.pokemon?.id}}</h2>
                         <img class="details__container__image" [src]="this.pokemon?.sprites.other.dream_world.front_default || this.pokemon?.sprites.other['official-artwork'].front_default" />
                     </div>
+                    <div class="row d-block d-md-none">
+                        <div class="row justify-content-center">
+                            <h1 class="text-center details__container__header">{{this.pokemon?.name | capitalize }}</h1>
+                            <hr>
+                        </div>
+                    </div>
                     <div class="row  mt-4">
                         <h2 class="text-center"><u>Type</u></h2>
                             <div class="d-flex justify-content-center" *ngIf="this.pokemon">
                                 <button *ngFor="let types of this.pokemon.types; let i = index" [ngClass]="loadClass(types.type.name)" class="details__container__button btn btn-primary">{{types.type.name | capitalize}}</button>
                               </div>
                     </div>
+
+                    <div class="row  mt-4 mb-4">
+                        <h2 class="text-center"><u>Abilities</u></h2>
+                            <div class="d-flex justify-content-center" *ngIf="this.pokemon">
+                                <button *ngFor="let abilities of this.pokemon.abilities; let i = index" class="details__container__button btn btn-primary">{{abilities.ability.name | capitalize}}</button>
+                              </div>
+                    </div>
                 </div>   
         </div>
         <div class="details__container col-sm-12 col-lg-7 col-md-7">
             <div class="col">
-                <div class="row justify-content-center">
+                <div class="row justify-content-center d-none d-md-block">
                     <h1 class="text-center details__container__header">{{this.pokemon?.name | capitalize }}</h1>
                     <hr>
                 </div>
@@ -31,9 +44,9 @@
                     <h3 class="text-center">Weight:  {{this.pokemon?.weight/10}} kg</h3>
                 </div>
                 <div class="row mt-3 justify-content-center">
-                    <h1 class="text-center"><u>Stats</u></h1>
-                    <div class="card details__container__stats">
 
+                    <div class="card details__container__stats">
+                        <h1 class="text-center" style="color:antiquewhite"><u>Stats</u></h1>
                         <div class="details__container__stats__base d-flex flex-row align-items-center">
                             <h3 class="details__container__stats__base" style="width: 185px">Base: </h3>
                             <div class="progress details__container__stats__base__progress">
@@ -103,5 +116,11 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="moves container">
+    <div class="row">
+        
     </div>
 </div>

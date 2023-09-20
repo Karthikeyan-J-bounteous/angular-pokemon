@@ -26,7 +26,7 @@
             padding: 0px;
 
             &__base{
-                text-align: end;
+                text-align: center;
                 margin: 4px;
                 color: #d6d6d6;
 
@@ -42,7 +42,7 @@
             }
 
             &__health{
-                text-align: end;
+                text-align: center;
                 margin: 4px;
                 color: #a0ffa3;
 
@@ -58,7 +58,7 @@
             }
 
             &__attack{
-                text-align: end;
+                text-align: center;
                 margin: 4px;
                 color: #ff7c7c;
 
@@ -74,7 +74,7 @@
             }
 
             &__sdef{
-                text-align: end;
+                text-align: center;
                 margin: 4px;
                 color: #8cdeff;
 
@@ -90,7 +90,7 @@
             }
 
             &__satk{
-                text-align: end;
+                text-align: center;
                 margin: 4px;
                 color: #ff9900;
 
@@ -106,7 +106,7 @@
             }
 
             &__defense{
-                text-align: end;
+                text-align: center;
                 margin: 4px;
                 color: #c69eff;
 
@@ -122,7 +122,7 @@
             }
 
             &__speed{
-                text-align: end;
+                text-align: center;
                 margin: 4px;
                 color: #ff80bb;
 
@@ -151,9 +151,10 @@
 
         &__button {
 
-            width: 120px;
+            min-width: 120px;
             margin: 5px;
             border-color: black;
+            background-color: #d51919;
             border-radius: 50px;
 
             &__normal {
@@ -225,6 +226,7 @@
             &__electric {
                 background-color: #FFD700;
                 box-shadow: 0px 0px 6px 2px #FFD7005f;
+                color: black;
             }
 
             &__psychic {

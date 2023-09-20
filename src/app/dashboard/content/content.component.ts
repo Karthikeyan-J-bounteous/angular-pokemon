@@ -70,9 +70,9 @@ export class ContentComponent {
         data.pokemon.forEach((poke: any) => {
           sortedByType.push(poke.pokemon.name);
           this.pokemonList = this.allPokemonList.filter(pokemon => sortedByType.includes(pokemon.name));
-          this.checkNav()
-          this.getItemsFromIndex();
         });
+        this.checkNav()
+        this.getItemsFromIndex();
       });
     }
 
@@ -83,9 +83,9 @@ export class ContentComponent {
           sortedByType.push(poke.pokemon.name);
           this.pokemonList = this.allPokemonList.filter(pokemon => sortedByType.includes(pokemon.name));
           this.pokemonList = this.pokemonList.filter(pokemon => pokemon.name.includes(<string>this.searchFilter[0]));
-          this.checkNav();
-          this.getItemsFromIndex();
         });
+        this.checkNav();
+        this.getItemsFromIndex();
       });
     } 
   }
@@ -99,7 +99,6 @@ export class ContentComponent {
       this.rightDisable = true;
       this.leftDisable = true;
     }
-    console.log(this.pokemonList)
   }
 
   selectNext() {
