@@ -42,4 +42,8 @@ export class DetailsPageComponent {
     }
     return "width:"+(point*100/300)+"%";
   }
+
+  redirect(){
+    this.router.navigate(['/home']);
+  }
 }

@@ -100,7 +100,7 @@ export class NavbarComponent {
   typeClick(type: string){
     if(type == 'clear'){
       this.selectedType = 'Type';
-      this.emitValues[1] = 'clear';
+      this.emitValues[0] = '';
       this.searchQuery = "";
     }
     else{

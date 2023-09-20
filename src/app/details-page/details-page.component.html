@@ -1,6 +1,6 @@
 <div class="details">
     <div class="details__nav d-flex align-items-center justify-content-center" d-flex align-items-center justify-content-center>
-        <img class="details__nav__logo" src="../../assets/pokemon-logo.png" alt="pokemon logo">
+        <img class="details__nav__logo" src="../../assets/pokemon-logo.png" alt="pokemon logo" (click)="redirect()">
     </div>
 
     <div class="row">
@@ -119,8 +119,11 @@
     </div>
 </div>
 
-<div class="moves container">
-    <div class="row">
-        
+<div class="moves">
+    <div class="moves__container row d-flex justify-content-between">
+        <h1 class="moves__heading text-center"><u>Moves</u></h1>
+        <div class="col d-flex justify-content-around" *ngFor="let moves of this.pokemon?.moves">
+            <button class="moves__button btn btn-primary">{{moves.move.name | capitalize}}</button>
+        </div>
     </div>
 </div>

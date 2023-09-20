@@ -21,6 +21,7 @@
 
         &__stats{
             background-color: transparent;
+            border-width: 3px;
             border-color: #FFCC00;
             border-radius: 10px;
             padding: 0px;
@@ -154,7 +155,8 @@
             min-width: 120px;
             margin: 5px;
             border-color: black;
-            background-color: #d51919;
+            background-color: #ac8202;
+            box-shadow: 0px 0px 6px 2px #ac82025f;
             border-radius: 50px;
 
             &__normal {
@@ -282,4 +284,34 @@ hr {
     border-width: 3px;
     border-radius: 1px;
     border-color: white;
+}
+
+.moves{
+    width: 100%;
+    height: auto;
+
+    &__heading{
+        margin-top: 10px;
+        color: antiquewhite;
+    }
+
+    &__container{
+        margin: 10px;
+        border-radius: 10px;
+        width: auto;
+        height: 300px;
+        overflow-y: scroll;
+        border:3px solid #FFCC00;
+
+    }
+
+    &__button{
+        width: 150px;
+        height: fit-content;
+        margin: 10px;
+        border-radius: 10px;
+        border-color: black;
+    background-color: rgb(221, 110, 0);
+
+    }
 }
